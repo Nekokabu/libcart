@@ -9,6 +9,7 @@ int cart_exit(void)
 		edx_exit,
 		ed_exit,
 		sc_exit,
+		edpro_exit,
 	};
 	if (cart_type < 0) return -1;
 	return exit[cart_type]();

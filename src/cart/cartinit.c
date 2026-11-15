@@ -11,6 +11,18 @@ int cart_init(void)
 		edx_init,
 		ed_init,
 		sc_init,
+		edpro_init,
+	};
+	/* Probe order */
+	/* EDPRO is probed before EDX (shared EDID prefix) and ED (register */
+	/* writes to the SRAM region) */
+	static const char order[CART_MAX] =
+	{
+		CART_CI,
+		CART_EDPRO,
+		CART_EDX,
+		CART_ED,
+		CART_SC,
 	};
 	int i, result;
 	/* bbplayer */
@@ -27,9 +39,9 @@ int cart_init(void)
 	{
 		for (i = 0; i < CART_MAX; i++)
 		{
-			if ((result = init[i]()) >= 0)
+			if ((result = init[(int)order[i]]()) >= 0)
 			{
-				cart_type = i;
+				cart_type = order[i];
 				return result;
 			}
 		}

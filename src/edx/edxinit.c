@@ -8,9 +8,14 @@ static const char edx_boot3[12] = "ED64 SD boot";
 
 int edx_init(void)
 {
+	u32 id;
 	__cart_acs_get();
+	/* EverDrive-64 PRO uses the same EDID prefix */
+	if (__cart_rd(EDX_EDID_REG) == EDX_EDID_EDPRO) CART_ABORT();
 	__cart_wr(EDX_KEY_REG, EDX_KEY);
-	if (__cart_rd(EDX_EDID_REG) >> 16 != 0xED64)
+	id = __cart_rd(EDX_EDID_REG);
+	if (id == EDX_EDID_EDPRO) CART_ABORT();
+	if (id >> 16 != 0xED64)
 	{
 		/* Check bootloader ROM label */
 		__cart_wr(EDX_SYS_CFG_REG, EDX_CFG_SDRAM_OFF);

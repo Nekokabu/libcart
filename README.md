@@ -11,6 +11,7 @@ the hardware.
 * EverDrive-64 V1, V2, V2.5, V3, X7 and X5
 * ED64Plus / Super 64
 * SummerCart64
+* EverDrive-64 PRO
 
 [Testing result spreadsheet](https://docs.google.com/spreadsheets/d/19opOv4e_4ABqgOmqRBSREtXLdGy08VzMsymtxWky0NU/edit?usp=sharing)
 

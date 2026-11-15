@@ -47,6 +47,17 @@ SC_OBJ := \
 	sc/sccardwrdram.o \
 	sc/sccardwrcart.o
 
+EDPRO_OBJ := \
+	edpro/edpro.o \
+	edpro/edproinit.o \
+	edpro/edproexit.o \
+	edpro/edprocard.o \
+	edpro/edprocardinit.o \
+	edpro/edprocardrddram.o \
+	edpro/edprocardrdcart.o \
+	edpro/edprocardwrdram.o \
+	edpro/edprocardwrcart.o
+
 OBJ := \
 	cart.o \
 	cartbuf.o \
@@ -56,7 +67,8 @@ OBJ := \
 	$(CI_OBJ) \
 	$(EDX_OBJ) \
 	$(ED_OBJ) \
-	$(SC_OBJ)
+	$(SC_OBJ) \
+	$(EDPRO_OBJ)
 
 INCLUDE := \
 	include/cart.h
@@ -110,7 +122,17 @@ SRC := \
 	src/sc/sccardrddram.c \
 	src/sc/sccardrdcart.c \
 	src/sc/sccardwrdram.c \
-	src/sc/sccardwrcart.c
+	src/sc/sccardwrcart.c \
+	src/edpro/edpro.h \
+	src/edpro/edpro.c \
+	src/edpro/edproinit.c \
+	src/edpro/edproexit.c \
+	src/edpro/edprocard.c \
+	src/edpro/edprocardinit.c \
+	src/edpro/edprocardrddram.c \
+	src/edpro/edprocardrdcart.c \
+	src/edpro/edprocardwrdram.c \
+	src/edpro/edprocardwrcart.c
 
 U64_PREFIX  := mips-linux-gnu-
 U64_CC      := $(U64_PREFIX)gcc

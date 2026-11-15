@@ -39,6 +39,7 @@
 #define EDX_CFG_BYTESWAP        0x0004
 
 #define EDX_KEY                 0xAA55
+#define EDX_EDID_EDPRO          0xED640027  /* EverDrive-64 PRO */
 
 #define EDX_SD_CMD_RD           EDX_SD_CMD_RD_REG
 #define EDX_SD_CMD_WR           EDX_SD_CMD_WR_REG

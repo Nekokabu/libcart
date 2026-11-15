@@ -11,6 +11,7 @@ int cart_card_wr_cart(u32 cart, u32 lba, u32 count)
 		edx_card_wr_cart,
 		ed_card_wr_cart,
 		sc_card_wr_cart,
+		edpro_card_wr_cart,
 	};
 	if (cart_type < 0) return -1;
 	return card_wr_cart[cart_type](cart, lba, count);

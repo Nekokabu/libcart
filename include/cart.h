@@ -14,7 +14,8 @@ typedef uint32_t u32;
 #define CART_EDX        1       /* EverDrive-64 X-series */
 #define CART_ED         2       /* EverDrive-64 V1, V2, V2.5, V3 and ED64+ */
 #define CART_SC         3       /* SummerCart64 */
-#define CART_MAX        4
+#define CART_EDPRO      4       /* EverDrive-64 PRO */
+#define CART_MAX        5
 
 #ifdef __cplusplus
 extern "C" {
@@ -84,6 +85,15 @@ extern int sc_card_rd_dram(void *dram, u32 lba, u32 count);
 extern int sc_card_rd_cart(u32 cart, u32 lba, u32 count);
 extern int sc_card_wr_dram(const void *dram, u32 lba, u32 count);
 extern int sc_card_wr_cart(u32 cart, u32 lba, u32 count);
+
+/* EverDrive-64 PRO functions */
+extern int edpro_init(void);
+extern int edpro_exit(void);
+extern int edpro_card_init(void);
+extern int edpro_card_rd_dram(void *dram, u32 lba, u32 count);
+extern int edpro_card_rd_cart(u32 cart, u32 lba, u32 count);
+extern int edpro_card_wr_dram(const void *dram, u32 lba, u32 count);
+extern int edpro_card_wr_cart(u32 cart, u32 lba, u32 count);
 
 #ifdef __cplusplus
 }

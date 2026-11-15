@@ -9,6 +9,7 @@ int cart_card_init(void)
 		edx_card_init,
 		ed_card_init,
 		sc_card_init,
+		edpro_card_init,
 	};
 	if (cart_type < 0) return -1;
 	return card_init[cart_type]();

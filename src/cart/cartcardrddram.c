@@ -11,6 +11,7 @@ int cart_card_rd_dram(void *dram, u32 lba, u32 count)
 		edx_card_rd_dram,
 		ed_card_rd_dram,
 		sc_card_rd_dram,
+		edpro_card_rd_dram,
 	};
 	if (cart_type < 0) return -1;
 	return card_rd_dram[cart_type](dram, lba, count);
